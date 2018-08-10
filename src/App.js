@@ -8,6 +8,7 @@ import Footer from "./components/common/footer";
 import About from "./components/about/about";
 import Team from "./components/team/team";
 import Recruitment from "./components/recruitment/recruitment";
+import FreemanHot from "./components/freeman_hot/freeman_hot";
 class RouterSet extends Component{
     render(){
         return (
@@ -23,6 +24,7 @@ class RouterSet extends Component{
                 <Route path="/contact_us" component={About}/>
                 <Route path="/team" component={Team}/>
                 <Route path="/recruitment" component={Recruitment}/>
+                <Route path="/freeman_hot" component={FreemanHot}/>
                 {this.props.location.pathname!=='/homepage'?(<Footer/>):''}
             </div>
         )
