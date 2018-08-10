@@ -1,0 +1,58 @@
+@import "../../../static/common.less";
+.footerBg {
+  width: 100%;
+  background-color: #f0f0f0;
+  .footer {
+    width: @baseWidth;
+    margin: 0 auto;
+    padding: 30px 0px 20px;
+    .left {
+      float: left;
+      width: 80px;
+      margin: -3px 150px 0px 0px;
+      &>img {
+        width: 100%;
+      }
+    }
+    .center {
+      float: left;
+      width: 211px;
+      .center_left {
+        float: left;
+        a {
+          display: block;
+          margin-top: 16px;
+          cursor: pointer;
+          line-height: 14px;
+          &:nth-child(1) {
+            margin-top: 0px;
+          }
+        }
+        &.center_right {
+          float: right;
+        }
+      }
+    }
+    .right {
+      float: right;
+      .right_item {
+        width: 100px;
+        float: left;
+        margin-left: 50px;
+        text-align: center;
+        &:nth-child(1) {
+          margin-left: 0px;
+        }
+        img {
+          width: 100px;
+        }
+      }
+    }
+    .textAlign{
+      clear:both;
+      font-size:12px;
+      text-align:center;
+      color:#666;
+    }
+  }
+}

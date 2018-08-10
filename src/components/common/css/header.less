@@ -1,0 +1,62 @@
+@import "../../../static/common.less";
+.headerBg {
+  width:100%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.02);
+  .header {
+    width: @baseWidth;
+    margin: 0 auto;
+    height: 84px;
+    .left {
+      float: left;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > img {
+        height: 60px;
+      }
+      div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a {
+        cursor: pointer;
+        margin-left: 48px;
+        transition: all 0.5s;
+        display: block;
+        height:30px;
+        line-height:25px;
+        &:after{
+          content:"";
+          display:block;
+          width:0;
+          height:2px;
+          margin:0 auto;
+          margin-top:4px;
+          transition: all 0.5s;
+          background-color:rgba(0, 0, 0, 0);
+        }
+      }
+      a:hover {
+        &:after{
+          width: 100%;
+          background:#ff5455;
+        }
+      }
+    }
+    .right {
+      float: right;
+      .message {
+        font-size: 16px;
+        margin-left: 48px;
+        padding-bottom:4px;
+        border: 0px solid rgba(0, 0, 0, 0);
+        cursor: pointer;
+        i {
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
