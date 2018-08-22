@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import { Tabs } from 'antd';
+import Header from "../common/header";
 require('./css/home.less');
 class Home extends Component{
     changeCallBack(e){
@@ -7,7 +8,8 @@ class Home extends Component{
     }
     render(){
         return (
-            <div>
+            <div className="container">
+                <Header {...this.props}/>
                 <div className="home">
                     <Tabs defaultActiveKey="1" onChange={this.changeCallBack}>
                         <Tabs.TabPane tab="需求列表" key="1">Content of Tab Pane 1</Tabs.TabPane>

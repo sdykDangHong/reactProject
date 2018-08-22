@@ -1,5 +1,7 @@
 import React,{ Component } from "react";
 import { Tabs , Timeline } from 'antd';
+import Header from "../common/header";
+import Footer from "../common/footer";
 require('./css/about.less');
 class About extends Component{
     render(){
@@ -45,7 +47,9 @@ class About extends Component{
                 break;
         }
         return (
-            <div className="aboutBox">
+            <div className="container">
+                <Header {...this.props} />
+                <div className="aboutBox">
                 <div className="aboutHeadBg">
                     <img src="http://www.315free.com/static/img/footBg.png" alt="关于我们" />
                     <div className="aboutHeadPos">
@@ -128,6 +132,8 @@ class About extends Component{
                         </Tabs.TabPane>
                     </Tabs>
                 </div>
+            </div>
+                <Footer/>
             </div>
         )
     }

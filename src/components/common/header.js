@@ -2,6 +2,10 @@ import React,{Component} from "react";
 import "./css/header.less";
 import { Link } from "react-router-dom";
 import { Icon } from "antd";
+import { connect } from "react-redux";
+@connect(
+    state=>({"state":state})
+)
 class Header extends Component{
     render(){
         return (
