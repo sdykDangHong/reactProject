@@ -1,5 +1,5 @@
-import React,{ Component , HttpAxios } from "react";
-import { Button } from "antd";
+import React,{ Component , Http , Url } from "react";
+import { Button , Modal } from "antd";
 import { Link } from "react-router-dom";
 import {connect} from "react-redux";
 import Header from "../common/header";
@@ -23,8 +23,8 @@ class Login extends Component{
         this.getYzmInfo()
     }
     getYzmInfo(){
-        HttpAxios({
-            url:"/gate/sdyk-bussiness/customer/img.shtml",
+        Http({
+            url:`${Url.Bussiness}/customer/img.shtml`,
             method:"get",
             hideLoading:true
         }).then((res)=>{
@@ -35,8 +35,8 @@ class Login extends Component{
         })
     }
     login(){
-        HttpAxios({
-            url:"/gate/sdyk-bussiness/customer/login.shtml",
+        Http({
+            url:`${Url.Bussiness}/customer/login.shtml`,
             method:"post",
             params:{
                 mobile:this.state.mobile,
@@ -47,10 +47,12 @@ class Login extends Component{
             }
         }).then((res)=>{
             let { code , data , msg } = res.data;
-            if(code==10000){
-
+            if(code===10000){
+                let time=new Date(new Date().getTime()+(this.props.state.tokenEffective)).toUTCString();
+                document.cookie = 'com.sdykToken='+data.token+";path=/;expires="+time;
+                this.props.dispatch({type:"userLogin",userInfo:data})
             }else{
-
+                Modal({title:"提示",content:msg})
             }
         })
 

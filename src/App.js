@@ -4,7 +4,10 @@ import store from "./redux/store";
 import Router from "./router/router";
 import axios from "./axios/axios";
 import "./static/common.less";
-React.HttpAxios=axios;
+React.Http=axios;
+React.Url={
+    Bussiness:"/gate/sdyk-bussiness",
+};
 class App extends Component {
     render() {
         return (

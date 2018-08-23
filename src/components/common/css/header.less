@@ -20,7 +20,15 @@
         justify-content: center;
         align-items: center;
       }
-      a {
+      .nick{
+        cursor: pointer;
+        margin-left: 48px;
+        transition: all 0.5s;
+        display: block;
+        height:30px;
+        line-height:25px;
+      }
+      .headerLink {
         cursor: pointer;
         margin-left: 48px;
         transition: all 0.5s;
@@ -37,11 +45,11 @@
           transition: all 0.5s;
           background-color:rgba(0, 0, 0, 0);
         }
-      }
-      a:hover {
-        &:after{
-          width: 100%;
-          background:#ff5455;
+        &:hover {
+          &:after{
+            width: 100%;
+            background:#ff5455;
+          }
         }
       }
     }
