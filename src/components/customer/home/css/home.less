@@ -1,0 +1,35 @@
+@import "../../../../static/common.less";
+.homeBox{
+  display:flex;
+  align-items:center;
+  height:500px;
+  .home {
+    width:510px;
+    margin: 0 auto;
+    .img{
+      margin:0 auto;
+    }
+    .btn{
+      display:flex;
+      justify-content:space-between;
+      margin-top:90px;
+      div{
+        width: 230px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 22px;
+        color: #fff;
+        letter-spacing: 0;
+        background: #ff5455;
+        border-radius: 100px;
+        cursor: pointer;
+        &:nth-child(2){
+          background: #fff;
+          border: 1px solid #ff5455;
+          color: #ff5455;
+        }
+      }
+    }
+  }
+}

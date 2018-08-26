@@ -1,0 +1,76 @@
+@import "../../../../static/common.less";
+.freelancers{
+  width:1000px;margin:0 auto;
+  .freelancerTit{
+    display:flex;
+    justify-content: space-between;
+    line-height:40px;
+    padding:35px 0 18px;
+    span{
+      color:#000;
+      font-size:20px;
+    }
+    .toDemand{
+      width: 120px;
+      height: 38px;
+      text-align: center;
+      line-height: 38px;
+      font-size: 15px;
+      color: #fff;
+      background: #ff5455;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+  .freelancerItem{
+    padding: 26px 40px;
+    border: 1px solid #eee;
+    width:100%;
+    margin-top:20px;
+    &:nth-of-type(1){margin-top:0px;}
+    .headerPic{
+      width:100px;
+      float:left;
+      text-align:center;
+      .img{
+        width:100px;height:100px;border-radius:50%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow: hidden;
+        img{
+          width:100%;
+        }
+      }
+      .nick{
+        margin-top:10px;font-size:15px;
+      }
+    }
+    .userInfo{
+      padding-left:136px;margin-left:-100px;float:left;
+      .top{
+        i{
+          display: block;
+          padding: 8px 16px;
+          font-size: 12px;
+          color: #333;
+          line-height: 14px;
+          border: 1px solid #f0f0f0;
+          float: left;
+          margin-left: 10px;
+          font-style: normal;
+          &:nth-of-type(1){margin-left:0px;}
+        }
+      }
+      .center{
+        margin-top:20px;
+        width:300px;
+        height:20px;
+        display:flex;
+        align-items:center;
+        .tit{float:left;margin-right:10px;}
+      }
+    }
+  }
+  .page{text-align:right;padding:40px 0;}
+}

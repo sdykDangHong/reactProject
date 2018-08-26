@@ -3,10 +3,11 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import Router from "./router/router";
 import axios from "./axios/axios";
-import "./static/common.less";
+import "./static/reset.css";
 React.Http=axios;
 React.Url={
     Bussiness:"/gate/sdyk-bussiness",
+    Rcmd:"/rcmd",
 };
 class App extends Component {
     render() {

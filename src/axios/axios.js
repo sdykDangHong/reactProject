@@ -7,11 +7,11 @@ axios.interceptors.request.use(config => {
     if(!config.hideLoading){
         store.dispatch({type:"axiosRequestReset",isShowLoading:true,redirectToLogin:false})
     }
-    // 延续cookie有效时间
-    let time=new Date(new Date().getTime()+(store.getState().tokenEffective)).toUTCString();
-    document.cookie =`com.sdykToken=${getCookie("com.sdykToken")};path=/;expires=${time}`;
-    // 添加全局请求token认证
     if(getCookie("com.sdykToken")){
+        // 延续cookie有效时间
+        let time=new Date(new Date().getTime()+(store.getState().tokenEffective)).toUTCString();
+        document.cookie =`com.sdykToken=${getCookie("com.sdykToken")};path=/;expires=${time}`;
+        // 添加全局请求token认证
         config.headers.token=getCookie("com.sdykToken")
     }
     return config

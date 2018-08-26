@@ -65,6 +65,11 @@
       "target": "http://47.93.180.1:8965",
       "changeOrigin": true,
       "pathRewrite": { "^/gate" : "/gate" }
+    },
+    "/rcmd": {
+      "target": "http://testwww.315free.com/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/rcmd" : "/rcmd" }
     }
   },
   "jest": {
