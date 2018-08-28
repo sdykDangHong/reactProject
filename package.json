@@ -60,18 +60,7 @@
     "less-loader": "^4.1.0",
     "react-router-dom": "^4.3.1"
   },
-  "proxy": {
-    "/gate": {
-      "target": "http://47.93.180.1:8965",
-      "changeOrigin": true,
-      "pathRewrite": { "^/gate" : "/gate" }
-    },
-    "/rcmd": {
-      "target": "http://testwww.315free.com/",
-      "changeOrigin": true,
-      "pathRewrite": { "^/rcmd" : "/rcmd" }
-    }
-  },
+  
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
