@@ -27,7 +27,7 @@ class NoLogin extends Component{
                         <HeaderComponent />
                     </div>
                     <div className="left right">
-                        <div><Link to="/help" className="headerLink">使用帮助</Link></div>
+                        <div><a href="http://help.315free.com/" target="_blank" rel="noopener noreferrer" className="headerLink">使用帮助</a></div>
                         <div><Link to="/login" className="message headerLink"><Icon type="user" /><i style={{"marginLeft":"6px"}}>登录</i></Link></div>
                     </div>
                 </div>

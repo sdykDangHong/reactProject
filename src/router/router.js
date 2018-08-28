@@ -12,6 +12,8 @@ import Recruitment from "../components/customer/recruitment/recruitment";
 import Projects from "../components/customer/projects/projects";
 import Freelancers from "../components/customer/freelancers/freelancers";
 import DemandsAdd from "../components/customer/demand-add/demand-add";
+import Register from "../components/customer/register/register";
+import DemanderProjects from "../components/demander/projects/projects";
 @connect(
     state=>({
         isShowLoading:state.isShowLoading,
@@ -39,6 +41,7 @@ class Router extends Component{
                 <Spin tip="加载中，请稍后" spinning={this.props.isShowLoading} className="loading">
                     <Switch>
                         {this.props.redirectToLogin?(<Redirect to="/about" />):''}
+                        {/*  不区分身份   */}
                         <Route path="/" exact component={Home}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/about" component={About}/>
@@ -49,7 +52,11 @@ class Router extends Component{
                         <Route path="/freeman_hot" component={FreemanHot}/>
                         <Route path="/projects" component={Projects}/>
                         <Route path="/freelancers" component={Freelancers}/>
+                        <Route path="/register" component={Register}/>
+                        {/*  甲方  */}
                         <Route path="/demands-add" component={DemandsAdd}/>
+                        <Route path="/demander/projects" component={DemanderProjects} />
+
                         <Route>
                             <Redirect to="/"/>
                         </Route>

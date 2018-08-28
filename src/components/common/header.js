@@ -8,7 +8,8 @@ import FreelancerHeader from "./headerCardComponent/freelancerHeader";
 @connect(
     state=>({
         "customerId":state.userInfo.customerId,
-        "loginState":state.userInfo.loginState
+        "loginState":state.userInfo.loginState,
+        "userInfo":state.userInfo
     })
 )
 class Header extends Component{
@@ -26,15 +27,14 @@ class Header extends Component{
                 url:`${Url.Bussiness}/customer/change-auth`,
                 method:"post",
                 params:{
-                    token:this.props.state.userInfo.token
+                    token:this.props.userInfo.token
                 }
             })
             .then((res)=>{
                 let { code , data , msg } = res.data;
                 if(code===10000){
-                    let obj=this.props.state.userInfo;
-                    obj={
-                        ...obj,
+                    let obj={
+                        ...this.props.userInfo,
                         loginState:data
                     }
                     this.props.dispatch({

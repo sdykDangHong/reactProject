@@ -1,0 +1,33 @@
+@import "../../../../static/common.less";
+
+@childBaseWidth:1100px;
+.demanderProjects {
+    width:@childBaseWidth;margin:0 auto;padding-top:45px;
+    .headOwnTaskStatus {
+        border: 1px solid #eee;width:@childBaseWidth;box-sizing: border-box;padding: 45px 125px;position:relative;
+        .ownStateEcharts{
+
+        }
+        .hr{
+            width:1px;position:absolute;left:50%;top:0;height:100%;display:flex;align-items:center;
+            div{width:1px;height:130px;background-color:#e4e4e4;}
+        }
+        .ownStateTable{
+            float:right;
+            .tableItem{
+                margin-top:34px;
+                &:nth-of-type(1){margin-top:0px;}
+                .tableItemLine{
+                    display:flex;align-items:center;float:left;
+                    &:nth-child(1){width:200px;}
+                    .icon{width:10px;height:10px;background-color: rgb(249, 118, 0);float:left;}
+                    .word{
+                        float:left;margin-left:10px;
+                        .state{margin-left:10px;font-weight:bold;}
+                    }
+                }
+
+            }
+        }
+    }
+}

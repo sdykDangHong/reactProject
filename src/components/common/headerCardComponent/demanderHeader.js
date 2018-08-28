@@ -12,12 +12,12 @@ class DemanderHeader extends Component{
                 <div className="header clearfix">
                     <div className="left">
                         <Link to="/"><img src="http://www.315free.com/static/img/logo.png" alt=""/></Link>
-                        <div><Link to="/work" className="headerLink">工作台</Link></div>
+                        <div><Link to="/demander/projects" className="headerLink">工作台</Link></div>
                         <div><Link to="/demands-add" className="headerLink">发布需求</Link></div>
                         <div><Link to="/im" className="headerLink">聊天工具</Link></div>
                     </div>
                     <div className="left right">
-                        <div><Link to="/help" className="headerLink">使用帮助</Link></div>
+                        <div><a href="http://help.315free.com/" target="_blank" rel="noopener noreferrer" className="headerLink">使用帮助</a></div>
                         <div><Link to="/complaints" className="headerLink">匿名吐槽</Link></div>
                         <div><Link to="/message" className="message headerLink"><Icon type="bell" /></Link></div>
                         <Dropdown overlay={this.props.menu} placement="bottomCenter">
