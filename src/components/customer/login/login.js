@@ -51,7 +51,7 @@ class Login extends Component{
                 let time=new Date(new Date().getTime()+(this.props.state.tokenEffective)).toUTCString();
                 document.cookie = 'com.sdykToken='+data.token+";path=/;expires="+time;
                 this.props.dispatch({type:"userLogin",userInfo:data})
-                this.props.location.push("/demander/projects")
+                this.props.history.push("/demander/projects")
             }else{
                 Modal.info({title:"提示",content:msg})
             }
