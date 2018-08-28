@@ -5,15 +5,19 @@
     width:@childBaseWidth;margin:0 auto;padding-top:45px;
     .headOwnTaskStatus {
         border: 1px solid #eee;width:@childBaseWidth;box-sizing: border-box;padding: 45px 125px;position:relative;
+        height:240px;
         .ownStateEcharts{
-
+            float:left;width:240px;height:240px;position: relative;margin-top:-50px;
+            #projectsEcharts{
+            }
         }
         .hr{
-            width:1px;position:absolute;left:50%;top:0;height:100%;display:flex;align-items:center;
-            div{width:1px;height:130px;background-color:#e4e4e4;}
+            width:2px;position:absolute;left:50%;top:0;margin-top:1px;height:100%;display:flex;align-items:center;
+            div{width:2px;height:130px;background-color:#e4e4e4;}
         }
         .ownStateTable{
-            float:right;
+            float:right;height:100%;
+            display: flex;align-items:center;
             .tableItem{
                 margin-top:34px;
                 &:nth-of-type(1){margin-top:0px;}

@@ -1,6 +1,10 @@
 import React,{ Component , Http , Url } from "react";
 import { Modal } from "antd";
 import { connect } from "react-redux";
+const echarts = require('echarts/lib/echarts');
+require('echarts/lib/chart/pie');
+// 引入提示框和标题组件
+require('echarts/lib/component/tooltip');
 @connect(
     state=>({
         "customerId":state.userInfo.customerId
@@ -50,8 +54,57 @@ class ProjectsEcharts extends Component{
             ]
         }
     }
-    componentWillMount(){
+    componentDidMount(){
         this.getDemandState()
+        this.echartsCreated()
+    }
+    echartsCreated(){
+        var myChart = echarts.init(document.getElementById('projectsEcharts'));
+        let option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            },
+            series: [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '20',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data:[
+                        {value:335, name:'直接访问'},
+                        {value:310, name:'邮件营销'},
+                        {value:234, name:'联盟广告'},
+                        {value:135, name:'视频广告'},
+                        {value:1548, name:'搜索引擎'}
+                    ]
+                }
+            ]
+        };
+        myChart.setOption(option)
     }
     getDemandState(){
         Http({
@@ -86,24 +139,25 @@ class ProjectsEcharts extends Component{
         return (
             <div className="headOwnTaskStatus clear">
                 <div className="ownStateEcharts">
-
+                    <canvas id="projectsEcharts" width="240" height="240" style={{width:'240px',height:'240px'}}></canvas>
                 </div>
                 <div className="hr"><div></div></div>
                 <div className="ownStateTable">
-                    {this.state.stateList.map((parentitem,index)=>
-                        <div className="tableItem clear" key={`tableItem${index}`}>
-                            {parentitem.map((item)=>
-                                <div className="tableItemLine" key={item.word}>
-                                    <div className="icon" style={{"backgoundColor":item.backgoundColor}}></div>
-                                    <div className="word">
-                                        <span>{item.word}</span>
-                                        <span className="state">{item.state}</span>
+                    <div>
+                        {this.state.stateList.map((parentitem,index)=>
+                            <div className="tableItem clear" key={`tableItem${index}`}>
+                                {parentitem.map((item)=>
+                                    <div className="tableItemLine" key={item.word}>
+                                        <div className="icon" style={{"backgoundColor":item.backgoundColor}}></div>
+                                        <div className="word">
+                                            <span>{item.word}</span>
+                                            <span className="state">{item.state}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                        </div>
-                    )}
-
+                                )}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         )
