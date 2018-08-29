@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 
 function count(state={},data){
     return {
+        // 用户信息
         userInfo:{},
         // 判断是否显示loading
         isShowLoading:false,

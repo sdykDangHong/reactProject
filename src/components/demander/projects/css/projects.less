@@ -34,4 +34,55 @@
             }
         }
     }
+    .ownProjectList{
+        width:100%;padding-top:36px;
+        .projectSearch{
+            width:100%;
+            .searchTab{
+                border-bottom:1px solid #f0f0f0;height:27px;
+                .tabItem{
+                    position:relative;bottom:0px;border-bottom:1px solid #ff5455;padding-bottom:6px;line-height:20px;font-size:16px;
+                }
+            }
+            .searchBox{
+                padding:40px 0 18px;border-bottom:1px solid #f0f0f0;
+                .searchDemandTitle{
+                    float:left;
+                    .tit{font-size:15px;line-height:40px;color:#333;float:left;margin-right:10px;}
+                    .demandTitleInput{
+                        width:250px;float:left;
+                    }
+                }
+                .demandSort{
+                    float:right;
+                    .sortIcon{
+                        float:right;line-height:40px;font-size:22px;transform:rotate(90deg);cursor: pointer;
+                    }
+                    .sortWord{float:right;margin-right:20px;font-size:16px;line-height:40px;}
+                }
+            }
+        }
+        .projectItem{
+            width:100%;border:1px solid #eee;box-sizing:border-box;margin-top:20px;padding:30px;position: relative;overflow:hidden;
+            .line{
+                .lineItem{
+                    font-size:16px;line-height:30px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;float:left;
+                    &.left{width:250px;}
+                    &.center{width:320px;}
+                    &.right{width:438px;}
+                }
+                &.secondLine{margin-top:20px;}
+            }
+            .statusPos{
+                width:100px;height:100px;position: absolute;top:-23px;right:-26px;display:flex;justify-content:center;align-items: center;transform:rotate(45deg);
+                .statusWord{width:120px;height:20px;background:#f97600;color:#fff;text-align:center;line-height:20px;}
+            }
+        }
+        .projectPage{
+            padding:40px;text-align:right;
+        }
+        .ownProjectIsNull{
+            text-align:center;line-height:400px;font-size:30px;padding-bottom:80px;
+        }
+    }
 }

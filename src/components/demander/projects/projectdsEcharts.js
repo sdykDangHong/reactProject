@@ -51,15 +51,34 @@ class ProjectsEcharts extends Component{
                         state:""
                     }
                 ]
-            ]
+            ],
+            isNeedUpdateRefresh:true
         }
     }
     componentDidMount(){
-        this.getDemandState()
-        this.echartsCreated()
+        this.init()
     }
-    echartsCreated(){
+    componentDidUpdate(){
+        // 在用户更新信息之后的数据刷新
+        this.init()
+    }
+    init(){
+        // 判断是否可以取到用户登陆信息之后进行用户信息调取
+        if(this.props.customerId && this.state.isNeedUpdateRefresh){
+            this.getDemandState()
+        }
+    }
+    echartsCreated(valueList){
         var myChart = echarts.init(document.getElementById('projectsEcharts'));
+        let keyList=['审核中','执行中','沟通中','已完成',"签约中",'已关闭'];
+        let dataList=[]
+        keyList.map((item,index)=>{
+            dataList.push({
+                name:item,
+                value:valueList[index]
+            })
+            return 1;
+        })
         let option = {
             tooltip: {
                 trigger: 'item',
@@ -68,7 +87,7 @@ class ProjectsEcharts extends Component{
             legend: {
                 orient: 'vertical',
                 x: 'left',
-                data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+                data:keyList
             },
             series: [
                 {
@@ -94,13 +113,7 @@ class ProjectsEcharts extends Component{
                             show: false
                         }
                     },
-                    data:[
-                        {value:335, name:'直接访问'},
-                        {value:310, name:'邮件营销'},
-                        {value:234, name:'联盟广告'},
-                        {value:135, name:'视频广告'},
-                        {value:1548, name:'搜索引擎'}
-                    ]
+                    data:dataList
                 }
             ]
         };
@@ -118,6 +131,7 @@ class ProjectsEcharts extends Component{
             let { code , data , msg } = res.data;
             if(code===10000){
                 let stateData=this.state.stateList;
+                this.echartsCreated([data.examiningCount,data.executingCount,data.communicatingCount,data.doneCount,data.signingCount,data.closedCount])
                 stateData[0][0].state=data.examiningCount
                 stateData[0][1].state=data.executingCount
                 stateData[1][0].state=data.communicatingCount
@@ -125,7 +139,8 @@ class ProjectsEcharts extends Component{
                 stateData[2][0].state=data.signingCount
                 stateData[2][1].state=data.closedCount
                 this.setState({
-                    stateList:stateData
+                    stateList:stateData,
+                    isNeedUpdateRefresh:false
                 })
             }else{
                 Modal.info({

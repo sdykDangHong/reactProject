@@ -2,6 +2,7 @@ import React , { Component } from "react";
 import Header from "../../common/header";
 import Footer from "../../common/footer";
 import ProjectsEcharts from "./projectdsEcharts";
+import OwnProject from "./ownProjects";
 
 require("./css/projects.less");
 class DemanderProjects extends Component{
@@ -11,6 +12,7 @@ class DemanderProjects extends Component{
                 <Header {...this.props} />
                 <div className="demanderProjects">
                     <ProjectsEcharts />
+                    <OwnProject />
                 </div>
                 <Footer/>
             </div>
