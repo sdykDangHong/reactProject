@@ -14,6 +14,8 @@ import Freelancers from "../components/customer/freelancers/freelancers";
 import DemandsAdd from "../components/customer/demand-add/demand-add";
 import Register from "../components/customer/register/register";
 import DemanderProjects from "../components/demander/projects/projects";
+import FreelancerProjects from "../components/freelancer/projects/projects";
+import SearchProjects from "../components/freelancer/searchProjects/searchProjects";
 @connect(
     state=>({
         isShowLoading:state.isShowLoading,
@@ -56,6 +58,9 @@ class Router extends Component{
                         {/*  甲方  */}
                         <Route path="/demands-add" component={DemandsAdd}/>
                         <Route path="/demander/projects" component={DemanderProjects} />
+                        {/*  乙方  */}
+                        <Route path="/freelancer/projects" component={FreelancerProjects} />
+                        <Route path="/freelancer/search-projects" component={SearchProjects} />
 
                         <Route>
                             <Redirect to="/"/>

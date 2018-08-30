@@ -11,7 +11,7 @@ class DemandItem extends Component{
     render(){
         return (
             <div className="demandItem">
-                <div className="first"><span title="22222223">{this.props.title}</span>
+                <div className="first"><span title={this.props.title}>{this.props.title}</span>
                     <span className="time">发布时间：{ formatTime(this.props.insert_time,'Y-M-D') }</span></div>
                 <div className="second"><span>{this.props.city}</span></div>
                 <div className="three">

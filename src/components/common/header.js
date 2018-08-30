@@ -41,6 +41,11 @@ class Header extends Component{
                         type:"changeUserCurrentIdentity",
                         userInfo:obj
                     })
+                    if(data===1){
+                        this.props.history.push("/demander/projects")
+                    }else{
+                        this.props.history.push("/freelancer/projects")
+                    }
                 }else{
                     Modal.info({
                         title:"提示",
@@ -73,7 +78,7 @@ class Header extends Component{
         const menu=(
             <Menu onClick={this.userInfoBtnClick.bind(this)}>
                 <Menu.Item key={1}>
-                    <span>个人中心</span>
+                    <span>工作台</span>
                 </Menu.Item>
                 <Menu.Item key={2}>
                     <span>切换身份</span>

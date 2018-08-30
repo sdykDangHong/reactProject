@@ -14,7 +14,6 @@ class DemanderHeader extends Component{
                         <Link to="/"><img src="http://www.315free.com/static/img/logo.png" alt=""/></Link>
                         <div><Link to="/demander/projects" className="headerLink">工作台</Link></div>
                         <div><Link to="/demands-add" className="headerLink">发布需求</Link></div>
-                        <div><Link to="/im" className="headerLink">聊天工具</Link></div>
                     </div>
                     <div className="left right">
                         <div><a href="http://help.315free.com/" target="_blank" rel="noopener noreferrer" className="headerLink">使用帮助</a></div>

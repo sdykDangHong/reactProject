@@ -14,7 +14,6 @@ class FreelancerHeader extends Component{
                         <Link to="/"><img src="http://www.315free.com/static/img/logo.png" alt=""/></Link>
                         <div><Link to="/freelancer/projects" className="headerLink">工作台</Link></div>
                         <div><Link to="/freelancer/search-projects" className="headerLink">找需求</Link></div>
-                        <div><Link to="/customer/newIm" className="headerLink">聊天工具</Link></div>
                     </div>
                     <div className="left right">
                         <div><Link to="/help" className="headerLink">使用帮助</Link></div>

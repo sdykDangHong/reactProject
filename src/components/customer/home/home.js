@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import { Link } from "react-router-dom";
 import Header from "../../common/header";
 require('./css/home.less');
 class Home extends Component{
@@ -15,8 +16,8 @@ class Home extends Component{
                             <img src="http://testwww.315free.com/static/img/index_bg.png" alt="全球智库任您使用海量需求任您选择"/>
                         </div>
                         <div className="btn">
-                            <div>免费发布需求</div>
-                            <div>即刻成为智库</div>
+                            <div><Link to="/demands-add">免费发布需求</Link></div>
+                            <div><Link to="/register">即刻成为智库</Link></div>
                         </div>
                     </div>
                 </div>
