@@ -17,6 +17,7 @@ class  DemandsAdd extends Component{
             YzmInfo:{
                 imgStr:''
             },
+            demandTit:"",
             step:1,
             registerAgreementChecked:false
         }
@@ -56,7 +57,10 @@ class  DemandsAdd extends Component{
             registerAgreementChecked:!this.state.registerAgreementChecked
         })
     }
-    changeInput(){
+    changeInput(event){
+        this.setState({
+            demandTit:event.target.value
+        })
 
     }
     demanRegister(){
@@ -73,7 +77,7 @@ class  DemandsAdd extends Component{
                         {
                             this.state.step===1?
                                 <DemandsAddRegister {...this.state} demandRegister={this.demanRegister.bind(this)}  getYzmInfo={this.getYzmInfo.bind(this)} changeInput={this.changeInput.bind(this)}  registerAgreementOnChange={this.registerAgreementOnChange.bind(this)} />
-                                :<DemandContent addDemand={this.addDemand.bind(this)} />
+                                :<DemandContent addDemand={this.addDemand.bind(this)} demandTit={this.state.demandTit} changeInput={this.changeInput.bind(this)} />
                         }
                     </div>
                 </div>

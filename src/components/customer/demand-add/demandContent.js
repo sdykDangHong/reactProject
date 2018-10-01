@@ -57,7 +57,7 @@ class DemandContent extends Component{
                 <div className="contentList">
                     <div className="contentItem">
                         <p className="tit">需求名称</p>
-                        <div className="input"><Input type="text" size="large" placeholder="请输入您的需求名称" value={this.props.demandTit} onKeyDown={this.props.inputChange} /></div>
+                        <div className="input"><Input type="text" size="large" placeholder="请输入您的需求名称" value={this.props.demandTit} onChange={this.props.changeInput} /></div>
                     </div>
                     <div className="contentItem">
                         <p className="tit">交付日期</p>
