@@ -20,6 +20,7 @@ class Home extends Component{
                             <div><Link to="/register">即刻成为智库</Link></div>
                         </div>
                     </div>
+                    <p className="textAlign">2015-2018 北京三点一刻科技有限公司 版权所有 京ICP备：15064808号-1</p>
                 </div>
             </div>
         )

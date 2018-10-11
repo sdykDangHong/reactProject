@@ -1,19 +1,24 @@
 @import "../../../../static/common.less";
-.homeBox{
-  display:flex;
-  align-items:center;
-  height:500px;
+.homeBox {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width:100%;
+  min-height:500px;
+  padding-top:84px;
+  z-index:-1;top:-84px;
+  position: relative;
   .home {
-    width:510px;
-    margin: 0 auto;
-    .img{
-      margin:0 auto;
+    width: 510px;
+    margin:-100px auto 0;
+    .img {
+      margin: 0 auto;
     }
-    .btn{
-      display:flex;
-      justify-content:space-between;
-      margin-top:90px;
-      div{
+    .btn {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 90px;
+      div {
         width: 230px;
         height: 60px;
         line-height: 60px;
@@ -23,17 +28,26 @@
         background: #ff5455;
         border-radius: 100px;
         cursor: pointer;
-        a{
+        a {
           color: #fff;
         }
-        &:nth-child(2){
+        &:nth-child(2) {
           background: #fff;
           border: 1px solid #ff5455;
-          a{
+          a {
             color: #ff5455;
           }
         }
       }
     }
   }
+  &>.textAlign {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+  }
 }
+

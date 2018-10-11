@@ -65,6 +65,13 @@ class Login extends Component{
             [key]:value
         })
     }
+    enterLogin(event){
+        if(event.which!==13){
+            return false
+        }else{
+            this.login()
+        }
+    }
     render(){
         const iconList=[
             {
@@ -106,7 +113,7 @@ class Login extends Component{
                                         <span>
                                             <img src={item.icon} alt={item.imgAlt}/>
                                         </span>
-                                        <input type={item.inputType} placeholder={item.inputPlaceHolder} onInput={this.changeInput.bind(this)} data-name={item.name}/>
+                                        <input type={item.inputType} placeholder={item.inputPlaceHolder} onInput={this.changeInput.bind(this)} onKeyUp={this.enterLogin.bind(this)} data-name={item.name}/>
                                         {item.yzm?(<div className="yzmImg"><img src={this.state.YzmInfo.imgStr} alt="图片验证码" onClick={this.getYzmInfo.bind(this)}/></div>):''}
                                     </div>
                                 )

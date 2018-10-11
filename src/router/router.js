@@ -16,6 +16,7 @@ import Register from "../components/customer/register/register";
 import DemanderProjects from "../components/demander/projects/projects";
 import FreelancerProjects from "../components/freelancer/projects/projects";
 import SearchProjects from "../components/freelancer/searchProjects/searchProjects";
+import ScrollTop from "./scrollTop";
 @connect(
     state=>({
         isShowLoading:state.isShowLoading,
@@ -40,33 +41,35 @@ class Router extends Component{
     render(){
         return (
             <BrowserRouter>
-                <Spin tip="加载中，请稍后" spinning={this.props.isShowLoading} className="loading">
-                    <Switch>
-                        {this.props.redirectToLogin?(<Redirect to="/about" />):''}
-                        {/*  不区分身份   */}
-                        <Route path="/" exact component={Home}/>
-                        <Route path="/login" component={Login}/>
-                        <Route path="/about" component={About}/>
-                        <Route path="/development" component={About}/>
-                        <Route path="/contact_us" component={About}/>
-                        <Route path="/team" component={Team}/>
-                        <Route path="/recruitment" component={Recruitment}/>
-                        <Route path="/freeman_hot" component={FreemanHot}/>
-                        <Route path="/projects" component={Projects}/>
-                        <Route path="/freelancers" component={Freelancers}/>
-                        <Route path="/register" component={Register}/>
-                        {/*  甲方  */}
-                        <Route path="/demands-add" component={DemandsAdd}/>
-                        <Route path="/demander/projects" component={DemanderProjects} />
-                        {/*  乙方  */}
-                        <Route path="/freelancer/projects" component={FreelancerProjects} />
-                        <Route path="/freelancer/search-projects" component={SearchProjects} />
+                <ScrollTop>
+                    <Spin tip="加载中，请稍后" spinning={this.props.isShowLoading} className="loading">
+                        <Switch>
+                            {this.props.redirectToLogin?(<Redirect to="/about" />):''}
+                            {/*  不区分身份   */}
+                            <Route path="/" exact component={Home}/>
+                            <Route path="/login" component={Login}/>
+                            <Route path="/about" component={About}/>
+                            <Route path="/development" component={About}/>
+                            <Route path="/contact_us" component={About}/>
+                            <Route path="/team" component={Team}/>
+                            <Route path="/recruitment" component={Recruitment}/>
+                            <Route path="/freeman_hot" component={FreemanHot}/>
+                            <Route path="/projects" component={Projects}/>
+                            <Route path="/freelancers" component={Freelancers}/>
+                            <Route path="/register" component={Register}/>
+                            {/*  甲方  */}
+                            <Route path="/demands-add" component={DemandsAdd}/>
+                            <Route path="/demander/projects" component={DemanderProjects} />
+                            {/*  乙方  */}
+                            <Route path="/freelancer/projects" component={FreelancerProjects} />
+                            <Route path="/freelancer/search-projects" component={SearchProjects} />
 
-                        <Route>
-                            <Redirect to="/"/>
-                        </Route>
-                    </Switch>
-                </Spin>
+                            <Route>
+                                <Redirect to="/"/>
+                            </Route>
+                        </Switch>
+                    </Spin>
+                </ScrollTop>
             </BrowserRouter>
         )
     }
