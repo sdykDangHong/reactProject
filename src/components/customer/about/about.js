@@ -4,6 +4,39 @@ import Header from "../../common/header";
 import Footer from "../../common/footer";
 require('./css/about.less');
 class About extends Component{
+    constructor(){
+        super();
+        this.state={
+            statusTab:'1'
+        }
+    }
+    tabChange(activeKey){
+        this.setState({
+            statusTab:activeKey
+        })
+    }
+    componentDidUpdate(prevProps) {
+        if(this.props.location.pathname !== prevProps.location.pathname) {
+            let statusTab="1";
+            switch (this.props.location.pathname) {
+                case '/about':
+                    statusTab = '1'
+                    break;
+                case '/development':
+                    statusTab = '2'
+                    break;
+                case '/contact_us':
+                    statusTab = '3'
+                    break;
+                default:
+                    statusTab = '1'
+                    break;
+            }
+            this.setState({
+                statusTab: statusTab
+            })
+        }
+    }
     render(){
         const timeList = [
             {
@@ -31,21 +64,6 @@ class About extends Component{
                 content:"公司获得数千万A轮融资，并正式发布一系列新品：三点一刻APP、公众号、PC线上官网和线下移动办公"
             }
         ]
-        let statusTab='1';
-        switch (this.props.location.pathname){
-            case '/about':
-                statusTab='1'
-                break;
-            case '/development':
-                statusTab='2'
-                break;
-            case '/contact_us':
-                statusTab='3'
-                break;
-            default:
-                statusTab='1'
-                break;
-        }
         return (
             <div className="container">
                 <Header {...this.props} />
@@ -60,7 +78,7 @@ class About extends Component{
                     </div>
                 </div>
                 <div className="tabShow">
-                    <Tabs defaultActiveKey={statusTab}  >
+                    <Tabs defaultActiveKey={this.state.statusTab}  activeKey={this.state.statusTab} onChange={this.tabChange.bind(this)} >
                         <Tabs.TabPane tab="关于我们" key="1">
                             <div className="content">
                                 <div className="contentText">
